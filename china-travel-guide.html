@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="download.jpeg">
+    <title>China Travel Guide - Mrs Gabriella Hyndman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#FF7D00',
+                        accent: '#36B37E',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .text-shadow-lg {
+                text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .location-card:hover .location-image {
+            transform: scale(1.05);
+        }
+        
+        .phrase-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .app-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .app-card:hover .app-icon {
+            transform: scale(1.05);
+        }
+        
+        .tutorial-step {
+            border-left: 3px solid #165DFF;
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fa fa-paper-plane text-primary text-2xl"></i>
+                <span class="font-bold text-xl text-primary">China Travel Guide</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#overview" class="hover:text-primary transition-custom">Overview</a>
+                <a href="#locations" class="hover:text-primary transition-custom">Locations</a>
+                <a href="#food" class="hover:text-primary transition-custom">Food</a>
+                <a href="#things-to-do" class="hover:text-primary transition-custom">Things to Do</a>
+                <a href="#apps" class="hover:text-primary transition-custom">Useful Apps</a>
+                <a href="#phrases" class="hover:text-primary transition-custom">Phrases</a>
+                <a href="#tips" class="hover:text-primary transition-custom">Tips</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="menu-toggle" class="md:hidden text-dark focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#overview" class="py-2 hover:text-primary transition-custom">Overview</a>
+                <a href="#locations" class="py-2 hover:text-primary transition-custom">Locations</a>
+                <a href="#food" class="py-2 hover:text-primary transition-custom">Food</a>
+                <a href="#things-to-do" class="py-2 hover:text-primary transition-custom">Things to Do</a>
+                <a href="#apps" class="py-2 hover:text-primary transition-custom">Useful Apps</a>
+                <a href="#phrases" class="py-2 hover:text-primary transition-custom">Phrases</a>
+                <a href="#tips" class="py-2 hover:text-primary transition-custom">Tips</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 md:pt-0 h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="1000006782.jpg" alt="Beautiful Chinese landscape with mountains and river" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/50"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white mb-6 text-shadow-lg leading-tight">
+                Welcome to China <br>Mrs Gabriella Hyndman
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] text-white/90 mb-10 max-w-3xl mx-auto text-shadow">
+                A helpful guide for exploring Shanghai, Sichuan, Zhangjiajie, Beijing, and Chengdu<br> <br> -Huhu Kang
+            </p>
+            <a href="#overview" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-custom transform hover:-translate-y-1">
+                Start Exploring <i class="fa fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+            <a href="#overview" class="text-white text-3xl opacity-80 hover:opacity-100 transition-custom">
+                <i class="fa fa-angle-double-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Trip Overview</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    This guide covers five amazing destinations in China, each offering unique cultural experiences, breathtaking scenery, and delicious food.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-light rounded-xl shadow-md p-6 hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-map-marker text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Destinations</h3>
+                    <p class="text-gray-600">
+                        Explore five incredible locations across China: the modern metropolis of Shanghai, the historical capital Beijing, the natural wonders of Zhangjiajie, and the cultural richness of Sichuan province including Chengdu.
+                    </p>
+                </div>
+                
+                <div class="bg-light rounded-xl shadow-md p-6 hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-cutlery text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Culinary Journey</h3>
+                    <p class="text-gray-600">
+                        Experience China's diverse food culture from Peking duck in Beijing to Sichuan's spicy specialties and Shanghai's delicate dim sum. Each region offers unique flavors and culinary traditions.
+                    </p>
+                </div>
+                
+                <div class="bg-light rounded-xl shadow-md p-6 hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-history text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Culture & History</h3>
+                    <p class="text-gray-600">
+                        Discover China's rich heritage spanning thousands of years, from ancient dynasties represented in historical sites to vibrant modern cultural expressions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Explore Locations</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Each destination offers a unique perspective on China's diverse culture, history, and natural beauty.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Shanghai -->
+                <div class="location-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="h-60 overflow-hidden">
+                        <img src="" alt="Shanghai skyline with modern skyscrapers" class="location-image w-full h-full object-cover transition-custom duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Shanghai</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">Modern Metropolis</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            China's largest city and global financial hub, blending futuristic skyscrapers with colonial-era architecture and traditional gardens.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-map-marker text-primary mr-2"></i>
+                                <span>Eastern China, on the Yangtze River</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-language text-primary mr-2"></i>
+                                <span>Shanghainese dialect + Mandarin</span>
+                            </div>
+                        </div>
+                        <button class="location-details-btn w-full bg-primary/10 hover:bg-primary/20 text-primary font-medium py-2 rounded-lg transition-custom" data-location="shanghai">
+                            View Details <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Beijing -->
+                <div class="location-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="h-60 overflow-hidden">
+                        <img src="" alt="Beijing Forbidden City with traditional architecture" class="location-image w-full h-full object-cover transition-custom duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Beijing</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">Historical Capital</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            China's capital city, home to ancient imperial landmarks, world-class museums, and modern architectural marvels.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-map-marker text-primary mr-2"></i>
+                                <span>Northern China, Hebei Province</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-language text-primary mr-2"></i>
+                                <span>Mandarin (standard)</span>
+                            </div>
+                        </div>
+                        <button class="location-details-btn w-full bg-primary/10 hover:bg-primary/20 text-primary font-medium py-2 rounded-lg transition-custom" data-location="beijing">
+                            View Details <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Zhangjiajie -->
+                <div class="location-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="h-60 overflow-hidden">
+                        <img src="" alt="Zhangjiajie mountains with tall sandstone pillars" class="location-image w-full h-full object-cover transition-custom duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Zhangjiajie</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">Natural Wonder</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Famous for its towering sandstone pillars, lush forests, and dramatic landscapes that inspired Avatar's floating mountains.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-map-marker text-primary mr-2"></i>
+                                <span>Hunan Province, Central China</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-language text-primary mr-2"></i>
+                                <span>Mandarin + local dialects</span>
+                            </div>
+                        </div>
+                        <button class="location-details-btn w-full bg-primary/10 hover:bg-primary/20 text-primary font-medium py-2 rounded-lg transition-custom" data-location="zhangjiajie">
+                            View Details <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Sichuan -->
+                <div class="location-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="h-60 overflow-hidden">
+                        <img src="" alt="Sichuan landscape with mountains and rivers" class="location-image w-full h-full object-cover transition-custom duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Sichuan</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">Cultural Province</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            A province known for spicy food, pandas, stunning natural scenery, and rich cultural traditions.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-map-marker text-primary mr-2"></i>
+                                <span>Southwestern China</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-language text-primary mr-2"></i>
+                                <span>Sichuanese dialect + Mandarin</span>
+                            </div>
+                        </div>
+                        <button class="location-details-btn w-full bg-primary/10 hover:bg-primary/20 text-primary font-medium py-2 rounded-lg transition-custom" data-location="sichuan">
+                            View Details <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Chengdu -->
+                <div class="location-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="h-60 overflow-hidden">
+                        <img src="" alt="Chengdu city with traditional and modern buildings" class="location-image w-full h-full object-cover transition-custom duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Chengdu</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">Relaxed Capital</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            The capital of Sichuan province, famous for pandas, spicy food, and a laid-back lifestyle centered around tea houses.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-map-marker text-primary mr-2"></i>
+                                <span>Sichuan Province, Southwestern China</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fa fa-language text-primary mr-2"></i>
+                                <span>Sichuanese dialect + Mandarin</span>
+                            </div>
+                        </div>
+                        <button class="location-details-btn w-full bg-primary/10 hover:bg-primary/20 text-primary font-medium py-2 rounded-lg transition-custom" data-location="chengdu">
+                            View Details <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Location Details (Hidden by default) -->
+            <div id="location-details" class="mt-16 hidden">
+                <div id="shanghai-details" class="location-content hidden">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-3xl font-bold mb-6">Shanghai</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div class="lg:col-span-2">
+                                <h4 class="text-xl font-semibold mb-3 text-primary">Overview</h4>
+                                <p class="text-gray-700 mb-4">
+                                    Shanghai is China's most populous city and a global financial center. Known as the "Paris of the East" in the 1920s and 1930s, it has evolved into a futuristic metropolis while preserving its historical charm.
+                                </p>
+                                <p class="text-gray-700 mb-4">
+                                    With a history dating back over 1,000 years, Shanghai became a major trading port in the 19th century, leading to a unique blend of Chinese and Western influences that is still evident in its architecture and culture.
+                                </p>
+                                
+                                <h4 class="text-xl font-semibold mb-3 mt-6 text-primary">Cultural Highlights</h4>
+                                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                    <li>Unique fusion of Chinese and Western architectural styles in the Bund</li>
+                                    <li>Traditional Shanghainese opera and music</li>
+                                    <li>Dynamic contemporary art scene</li>
+                                    <li>Historic water towns in the surrounding area</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="" alt="Shanghai skyline at night" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="beijing-details" class="location-content hidden">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-3xl font-bold mb-6">Beijing</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div class="lg:col-span-2">
+                                <h4 class="text-xl font-semibold mb-3 text-primary">Overview</h4>
+                                <p class="text-gray-700 mb-4">
+                                    Beijing, China's capital, has been a political and cultural center for over 800 years. It served as the capital for several dynasties, leaving behind a wealth of historical treasures.
+                                </p>
+                                <p class="text-gray-700 mb-4">
+                                    Today, Beijing is a fascinating mix of ancient traditions and modern development, with skyscrapers standing alongside imperial palaces and historic hutongs (narrow alleyways).
+                                </p>
+                                
+                                <h4 class="text-xl font-semibold mb-3 mt-6 text-primary">Cultural Highlights</h4>
+                                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                    <li>Imperial heritage from Ming and Qing dynasties</li>
+                                    <li>Traditional Peking opera performances</li>
+                                    <li>Ancient hutong neighborhoods with traditional courtyard homes</li>
+                                    <li>World-class museums including the Palace Museum</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="" alt="Beijing Great Wall" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="zhangjiajie-details" class="location-content hidden">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-3xl font-bold mb-6">Zhangjiajie</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div class="lg:col-span-2">
+                                <h4 class="text-xl font-semibold mb-3 text-primary">Overview</h4>
+                                <p class="text-gray-700 mb-4">
+                                    Zhangjiajie is a UNESCO World Heritage Site famous for its unique sandstone pillars, formed over 380 million years. These towering peaks, often shrouded in mist, create a magical landscape.
+                                </p>
+                                <p class="text-gray-700 mb-4">
+                                    The area was largely isolated until the 1980s when it began developing as a tourist destination. It gained international fame after serving as inspiration for the floating mountains in the movie Avatar.
+                                </p>
+                                
+                                <h4 class="text-xl font-semibold mb-3 mt-6 text-primary">Cultural Highlights</h4>
+                                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                    <li>Traditional Tujia and Miao ethnic minority cultures</li>
+                                    <li>Folk dances and music performances</li>
+                                    <li>Ancient villages preserving traditional lifestyles</li>
+                                    <li>Unique local crafts including batik and embroidery</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="" alt="Zhangjiajie national forest park" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="sichuan-details" class="location-content hidden">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-3xl font-bold mb-6">Sichuan</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div class="lg:col-span-2">
+                                <h4 class="text-xl font-semibold mb-3 text-primary">Overview</h4>
+                                <p class="text-gray-700 mb-4">
+                                    Sichuan is a province in southwestern China known for its fertile plains, dramatic mountain ranges, and rich cultural heritage. Often called the "Land of Abundance," it has a long history of agriculture and trade.
+                                </p>
+                                <p class="text-gray-700 mb-4">
+                                    The province is geographically diverse, from the Sichuan Basin with its mild climate to the Himalayan mountains in the west. This diversity has shaped a unique culture with distinct traditions.
+                                </p>
+                                
+                                <h4 class="text-xl font-semibold mb-3 mt-6 text-primary">Cultural Highlights</h4>
+                                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                    <li>Famous Sichuan opera with its unique face-changing technique</li>
+                                    <li>Traditional tea culture and tea houses</li>
+                                    <li>Diverse ethnic minorities including Tibetans, Yi, and Qiang</li>
+                                    <li>Ancient irrigation systems like Dujiangyan that have been in use for over 2,000 years</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="" alt="Sichuan mountain landscape" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="chengdu-details" class="location-content hidden">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-3xl font-bold mb-6">Chengdu</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div class="lg:col-span-2">
+                                <h4 class="text-xl font-semibold mb-3 text-primary">Overview</h4>
+                                <p class="text-gray-700 mb-4">
+                                    Chengdu, the capital of Sichuan province, is one of China's most livable cities, known for its relaxed pace of life despite being a major metropolitan area with over 16 million people.
+                                </p>
+                                <p class="text-gray-700 mb-4">
+                                    With a history dating back over 2,000 years, Chengdu has long been an important cultural and economic center in southwest China, famous for its fertile lands and agricultural productivity.
+                                </p>
+                                
+                                <h4 class="text-xl font-semibold mb-3 mt-6 text-primary">Cultural Highlights</h4>
+                                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                    <li>World-famous giant panda breeding research base</li>
+                                    <li>Traditional tea houses where locals gather to socialize</li>
+                                    <li>Ancient Jinli Street with traditional architecture and crafts</li>
+                                    <li>Chengdu opera featuring unique musical styles</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="" alt="Chengdu tea house scene" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Section -->
+    <section id="food" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Food Recommendations</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Chinese food varies dramatically by region. Here are the must-try dishes in each location.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Shanghai Food -->
+                <div class="bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="h-52 overflow-hidden">
+                        <img src="" alt="Shanghai xiaolongbao soup dumplings" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Shanghai Food</h3>
+                        <ul class="space-y-3">
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Xiaolongbao (小笼包)</span>
+                                    <p class="text-sm text-gray-600">Steamed soup dumplings with pork or crab filling</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Shengjianbao (生煎包)</span>
+                                    <p class="text-sm text-gray-600">Pan-fried pork buns with crispy bottoms</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Hairy Crab (大闸蟹)</span>
+                                    <p class="text-sm text-gray-600">Seasonal delicacy, especially in autumn</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Sweet and Sour Ribs (糖醋排骨)</span>
+                                    <p class="text-sm text-gray-600">Tangy-sweet pork ribs</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Beijing Food -->
+                <div class="bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="h-52 overflow-hidden">
+                        <img src="" alt="Peking duck being served" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Beijing Food</h3>
+                        <ul class="space-y-3">
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Peking Duck (北京烤鸭)</span>
+                                    <p class="text-sm text-gray-600">Roast duck with crispy skin, served with pancakes</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Zhajiangmian (炸酱面)</span>
+                                    <p class="text-sm text-gray-600">Noodles with soybean paste and vegetables</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Jiaozi (饺子)</span>
+                                    <p class="text-sm text-gray-600">Dumplings, often filled with pork or vegetables</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Lamb Hot Pot (涮羊肉)</span>
+                                    <p class="text-sm text-gray-600">Thinly sliced lamb cooked in a simmering broth</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Sichuan & Chengdu Food -->
+                <div class="bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="h-52 overflow-hidden">
+                        <img src="" alt="Sichuan hot pot with various ingredients" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Sichuan & Chengdu Food</h3>
+                        <ul class="space-y-3">
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Mapo Tofu (麻婆豆腐)</span>
+                                    <p class="text-sm text-gray-600">Spicy tofu with minced pork in chili oil</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Kung Pao Chicken (宫保鸡丁)</span>
+                                    <p class="text-sm text-gray-600">Spicy stir-fried chicken with peanuts</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Hot Pot (火锅,海底捞 Hai Di Lao is the best!) <br> - But come to Dalongyi NZ!!! </span>
+                                    <p class="text-sm text-gray-600">Spicy broth with various ingredients to cook</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">Dan Dan Noodles (担担面)</span>
+                                    <p class="text-sm text-gray-600">Spicy Sichuan noodles with sesame paste</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Zhangjiajie Food -->
+                <div class="bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom md:col-span-2 lg:col-span-3">
+                    <div class="h-52 overflow-hidden">
+                        <img src="" alt="Zhangjiajie local dishes spread" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Zhangjiajie Food</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <ul class="space-y-3">
+                                <li class="flex">
+                                    <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-semibold">Tujia Sticky Rice (土家族糯米饭)</span>
+                                        <p class="text-sm text-gray-600">Glutinous rice with local ingredients</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-semibold">Braised Pork with Cabbage (扣肉)</span>
+                                        <p class="text-sm text-gray-600">Layered pork belly with preserved cabbage</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="space-y-3">
+                                <li class="flex">
+                                    <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-semibold">Mountain Bamboo Shoots (山竹笋)</span>
+                                        <p class="text-sm text-gray-600">Fresh local bamboo shoots prepared various ways</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-semibold">Stir-fried Fern (炒蕨菜)</span>
+                                        <p class="text-sm text-gray-600">Wild fern vegetable stir-fried with garlic</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="space-y-3">
+                                <li class="flex">
+                                    <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-semibold">Grilled Fish (烤鱼)</span>
+                                        <p class="text-sm text-gray-600">Local river fish grilled with spices</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-semibold">Rice Cake (糍粑)</span>
+                                        <p class="text-sm text-gray-600">Glutinous rice cake, often sweet</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="space-y-3">
+                                <li class="flex">
+                                    <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-semibold">Sour Radish Fish Soup (酸萝卜鱼汤)</span>
+                                        <p class="text-sm text-gray-600">Tangy soup with local fish and radish</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-star text-secondary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-semibold">Mountain Honey (山蜂蜜)</span>
+                                        <p class="text-sm text-gray-600">Pure honey from local mountains</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Things to Do Section -->
+    <section id="things-to-do" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Things to Do</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Must-see attractions, unique activities, and hidden gems in each location.
+                </p>
+            </div>
+            
+            <!-- Tabs for different locations -->
+            <div class="mb-8 flex flex-wrap justify-center gap-4">
+                <button class="activity-tab active px-6 py-2 rounded-full bg-accent text-white font-medium" data-location="shanghai">Shanghai</button>
+                <button class="activity-tab px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 font-medium transition-custom" data-location="beijing">Beijing</button>
+                <button class="activity-tab px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 font-medium transition-custom" data-location="zhangjiajie">Zhangjiajie</button>
+                <button class="activity-tab px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 font-medium transition-custom" data-location="chengdu">Chengdu</button>
+                <button class="activity-tab px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 font-medium transition-custom" data-location="sichuan">Sichuan</button>
+            </div>
+            
+            <!-- Activities content -->
+            <div class="activity-content" id="shanghai-activities">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1067/800/600" alt="The Bund in Shanghai with historic buildings" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">The Bund</h3>
+                            <p class="text-gray-600 mb-4">Walk along this waterfront area featuring colonial-era buildings and views of Pudong's skyline.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Huangpu District</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1053/800/600" alt="Yu Garden traditional Chinese garden" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Yu Garden</h3>
+                            <p class="text-gray-600 mb-4">Explore this classical Chinese garden built in the 16th century, surrounded by traditional shops.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Huangpu District</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1031/800/600" alt="Shanghai Tower observation deck view" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Shanghai Tower</h3>
+                            <p class="text-gray-600 mb-4">Visit the observation deck of China's tallest building for panoramic city views.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Pudong District</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1063/800/600" alt="Tianzifang alleyways with shops" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Tianzifang</h3>
+                            <p class="text-gray-600 mb-4">Wander through this artsy area of narrow lanes with boutiques, cafes, and art galleries.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Xuhui District</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1051/800/600" alt="Zhujiajiao water town canals" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Zhujiajiao Water Town</h3>
+                            <p class="text-gray-600 mb-4">Take a day trip to this ancient water town with canals, bridges, and traditional architecture.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Qingpu District (suburban)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1057/800/600" alt="Shanghai Museum interior" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Shanghai Museum</h3>
+                            <p class="text-gray-600 mb-4">Discover ancient Chinese art and artifacts, including bronzes, ceramics, and paintings.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Huangpu District</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activity-content hidden" id="beijing-activities">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1059/800/600" alt="Great Wall of China at Mutianyu" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Great Wall of China</h3>
+                            <p class="text-gray-600 mb-4">Visit sections like Badaling or Mutianyu to walk on this iconic ancient defense structure.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Northern suburbs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1055/800/600" alt="Forbidden City entrance" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Forbidden City</h3>
+                            <p class="text-gray-600 mb-4">Explore the imperial palace complex that served as home to Chinese emperors for 500 years.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Central Beijing</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1061/800/600" alt="Tiananmen Square panorama" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Tiananmen Square</h3>
+                            <p class="text-gray-600 mb-4">Visit the world's largest public square, located in the heart of Beijing.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Central Beijing</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1056/800/600" alt="Summer Palace lake and pagoda" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Summer Palace</h3>
+                            <p class="text-gray-600 mb-4">Stroll through this imperial garden featuring lakes, bridges, and pagodas.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Haidian District</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1054/800/600" alt="Beijing hutong alley with rickshaw" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hutong Tour</h3>
+                            <p class="text-gray-600 mb-4">Take a rickshaw ride through traditional alleyways to experience old Beijing life.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Near Bell and Drum Towers</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1058/800/600" alt="Temple of Heaven main hall" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Temple of Heaven</h3>
+                            <p class="text-gray-600 mb-4">Visit this complex where emperors prayed for good harvests, with stunning architecture.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Dongcheng District</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activity-content hidden" id="zhangjiajie-activities">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1018/800/600" alt="Zhangjiajie National Forest Park pillars" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Zhangjiajie National Forest Park</h3>
+                            <p class="text-gray-600 mb-4">Explore the towering sandstone pillars that inspired the Avatar movie's floating mountains.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Wulingyuan Scenic Area</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1019/800/600" alt="Zhangjiajie Glass Bridge over canyon" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Grand Canyon Glass Bridge</h3>
+                            <p class="text-gray-600 mb-4">Walk across this 430-meter long glass-bottomed bridge suspended 300 meters above the canyon.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Zhangjiajie Grand Canyon</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1016/800/600" alt="Tianmen Mountain cable car" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Tianmen Mountain</h3>
+                            <p class="text-gray-600 mb-4">Take the cable car to this mountain with a natural archway and stunning views.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Outside Zhangjiajie City</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1039/800/600" alt="Golden Whip Stream in Zhangjiajie" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Golden Whip Stream</h3>
+                            <p class="text-gray-600 mb-4">Take a scenic walk along this crystal-clear stream surrounded by towering peaks.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Wulingyuan Scenic Area</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1062/800/600" alt="Tujia ethnic minority performance" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Tujia Minority Village</h3>
+                            <p class="text-gray-600 mb-4">Experience traditional Tujia culture, music, dance, and architecture.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Near Zhangjiajie Forest Park</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activity-content hidden" id="chengdu-activities">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1074/800/600" alt="Giant pandas at Chengdu Panda Base" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Chengdu Panda Base</h3>
+                            <p class="text-gray-600 mb-4">Visit this research center to see giant pandas in a naturalistic environment.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Northern Chengdu</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1060/800/600" alt="Jinli Ancient Street with traditional shops" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Jinli Ancient Street</h3>
+                            <p class="text-gray-600 mb-4">Walk along this pedestrian street with traditional architecture, shops, and street food.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Wuhou District</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1066/800/600" alt="People drinking tea in Chengdu tea house" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Traditional Tea House</h3>
+                            <p class="text-gray-600 mb-4">Experience local culture at a tea house with tea tasting and Sichuan opera performances.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Various locations</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1052/800/600" alt="Wuhou Temple in Chengdu" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Wuhou Temple</h3>
+                            <p class="text-gray-600 mb-4">Visit this ancient temple dedicated to Zhuge Liang, a famous strategist from the Three Kingdoms period.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Wuhou District</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/312/800/600" alt="Sichuan hot pot meal preparation" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hot Pot Cooking Class</h3>
+                            <p class="text-gray-600 mb-4">Learn to prepare authentic Sichuan hot pot with local ingredients and spices.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Multiple cooking schools in Chengdu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activity-content hidden" id="sichuan-activities">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1036/800/600" alt="Jiuzhaigou Valley with colorful lakes" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Jiuzhaigou Valley</h3>
+                            <p class="text-gray-600 mb-4">Explore this UNESCO site famous for its colorful lakes, waterfalls, and snow-capped peaks.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Northern Sichuan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1037/800/600" alt="Mount Emei with pagoda and mountains" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Mount Emei</h3>
+                            <p class="text-gray-600 mb-4">Climb this sacred Buddhist mountain to see temples, monkeys, and stunning sunrises.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Southern Sichuan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1038/800/600" alt="Dujiangyan irrigation system" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Dujiangyan Irrigation System</h3>
+                            <p class="text-gray-600 mb-4">Visit this 2,000-year-old engineering marvel that still irrigates the Sichuan Basin.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Near Chengdu</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1064/800/600" alt="Leshan Giant Buddha statue" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Leshan Giant Buddha</h3>
+                            <p class="text-gray-600 mb-4">See the world's largest stone Buddha statue, carved into a cliff face overlooking a river.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Leshan City, Sichuan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                        <img src="https://picsum.photos/id/1065/800/600" alt="Tibetan village in Sichuan" class="w-full h-52 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Tibetan Plateau Tour</h3>
+                            <p class="text-gray-600 mb-4">Explore the Tibetan regions of western Sichuan with monasteries, grasslands, and unique culture.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-map-marker text-accent mr-2"></i>
+                                <span>Western Sichuan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Useful Apps Section -->
+    <section id="apps" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Useful Apps for China Travel</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    These apps will help you navigate, communicate, and make the most of your trip in China.
+                </p>
+            </div>
+
+            <!-- iOS Download Guide for China -->
+            <div class="bg-light rounded-xl shadow-lg p-8 mb-16">
+                <h3 class="text-2xl font-bold mb-6 text-primary">How to Download Apps in China (iOS Guide)</h3>
+                <ol class="space-y-4">
+                    <li class="tutorial-step">
+                        <strong>Step 1:</strong> Open Settings on your iPhone and tap on your Apple ID at the top
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 2:</strong> Select "Media & Purchases" then "View Account"
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 3:</strong> Tap "Country/Region" and choose "China mainland"
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 4:</strong> Agree to the terms and conditions
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 5:</strong> For payment method, select "None"
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 6:</strong> Enter a Chinese address (you can use a hotel address)
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 7:</strong> Open the App Store - you'll now see the Chinese store
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Note:</strong> You can switch back to your original store after your trip using the same method
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WeChat -->
+                <div class="app-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+                            <img src="Wechat Logo.png" alt="WeChat app icon" class="app-icon w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">WeChat (微信)</h3>
+                        <p class="text-gray-600 mb-4">China's all-in-one app for messaging, payments, social media, and more.</p>
+                        
+                        <h4 class="font-semibold text-primary mb-2">How to Use:</h4>
+                        <ul class="text-left text-sm text-gray-600 space-y-1 mb-6">
+                            <li>• Create an account with your phone number</li>
+                            <li>• Add contacts by scanning QR codes</li>
+                            <li>• Link a Chinese bank card for payments</li>
+                            <li>• Use "Moments" for social updates</li>
+                            <li>• Book taxis, order food, and pay bills</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+                <!-- Alipay -->
+                <div class="app-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+                            <img src="Ailipay Logo.png" alt="Alipay app icon" class="app-icon w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Alipay (支付宝)</h3>
+                        <p class="text-gray-600 mb-4">Popular mobile payment app accepted almost everywhere in China.</p>
+                        
+                        <h4 class="font-semibold text-primary mb-2">How to Use:</h4>
+                        <ul class="text-left text-sm text-gray-600 space-y-1 mb-6">
+                            <li>• Register with your phone number</li>
+                            <li>• Use the "International Version" for foreign users</li>
+                            <li>• Link international credit cards</li>
+                            <li>• Generate your payment QR code to pay</li>
+                            <li>• Use for shopping, dining, and transportation</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+                <!-- Didi Chuxing -->
+                <div class="app-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+                            <img src="DIdi Logo.png" alt="Didi Chuxing app icon" class="app-icon w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Didi Chuxing (滴滴出行)</h3>
+                        <p class="text-gray-600 mb-4">China's main ride-hailing app, similar to Uber.</p>
+                        
+                        <h4 class="font-semibold text-primary mb-2">How to Use:</h4>
+                        <ul class="text-left text-sm text-gray-600 space-y-1 mb-6">
+                            <li>• Set your pickup and drop-off locations</li>
+                            <li>• Choose your ride type (economy, comfort, etc.)</li>
+                            <li>• Pay through the app with WeChat/Alipay</li>
+                            <li>• Use the English version for easy navigation</li>
+                            <li>• Can book taxis, private cars, and even buses</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+                <!-- Baidu Maps -->
+                <div class="app-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+                            <img src="https://picsum.photos/id/4/200/200" alt="Baidu Maps app icon" class="app-icon w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Gaode Maps (高德地图)</h3>
+                        <p class="text-gray-600 mb-4">Essential mapping app with detailed directions for China.</p>
+                        
+                        <h4 class="font-semibold text-primary mb-2">How to Use:</h4>
+                        <ul class="text-left text-sm text-gray-600 space-y-1 mb-6">
+                            <li>• Switch to English in settings</li>
+                            <li>• Search for locations in English or Chinese</li>
+                            <li>• Get walking,公交 (bus), and subway directions</li>
+                            <li>• Find nearby restaurants, shops, and attractions</li>
+                            <li>• Download offline maps for data-free use</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+                <!-- Meituan -->
+                <div class="app-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+                            <img src="https://picsum.photos/id/5/200/200" alt="Meituan app icon" class="app-icon w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Meituan (美团)</h3>
+                        <p class="text-gray-600 mb-4">Everything app for food delivery, restaurant bookings, and more.</p>
+                        
+                        <h4 class="font-semibold text-primary mb-2">How to Use:</h4>
+                        <ul class="text-left text-sm text-gray-600 space-y-1 mb-6">
+                            <li>• Order food delivery to your location</li>
+                            <li>• Book restaurant tables with discounts</li>
+                            <li>• Buy movie tickets and attraction passes</li>
+                            <li>• Use for grocery delivery and pharmacy orders</li>
+                            <li>• Pay with WeChat or Alipay</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+                <!-- Pleco -->
+                <div class="app-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+                            <img src="https://picsum.photos/id/6/200/200" alt="Pleco app icon" class="app-icon w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Pleco</h3>
+                        <p class="text-gray-600 mb-4">Powerful Chinese-English dictionary and translation app.</p>
+                        
+                        <h4 class="font-semibold text-primary mb-2">How to Use:</h4>
+                        <ul class="text-left text-sm text-gray-600 space-y-1 mb-6">
+                            <li>• Look up words by typing or drawing characters</li>
+                            <li>• Use the camera to translate menus and signs</li>
+                            <li>• Listen to correct pronunciation</li>
+                            <li>• Save useful phrases for quick access</li>
+                            <li>• Includes essential travel vocabulary lists</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Useful Phrases Section -->
+    <section id="phrases" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Useful Chinese Phrases</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Basic Mandarin phrases to help you communicate during your trip.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">Hello</h3>
+                        <span class="text-primary font-medium">你好</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Nǐ hǎo</p>
+                    <p class="text-gray-600 mb-3">Knee How</p>
+                    <div class="text-sm text-gray-500 italic">Use when greeting people</div>
+                </div>
+                
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">Thank you</h3>
+                        <span class="text-primary font-medium">谢谢</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Xièxie</p>
+                    <p class="text-gray-600 mb-3">Shieh Shieh</p>
+                    <div class="text-sm text-gray-500 italic">Polite thanks for any situation</div>
+                </div>
+                
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">Excuse me / Sorry</h3>
+                        <span class="text-primary font-medium">对不起</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Duìbuqǐ</p>
+                    <p class="text-gray-600 mb-3">Dway Boo Chee</p>
+                    <div class="text-sm text-gray-500 italic">For apologies or getting attention</div>
+                </div>
+                
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">How much is this?</h3>
+                        <span class="text-primary font-medium">这个多少钱？</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Zhège duōshǎo qián?</p>
+                    <p class="text-gray-600 mb-3">Juh guh dwor shaow chyen?</p>
+                    <div class="text-sm text-gray-500 italic">When shopping or dining</div>
+                </div>
+                
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">Where is the bathroom?</h3>
+                        <span class="text-primary font-medium">厕所在哪里？</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Cèsuǒ zài nǎlǐ?</p>
+                    <p class="text-gray-600 mb-3">Tsuh swaw dzai nah lee?</p>
+                    <div class="text-sm text-gray-500 italic">Essential for any traveler</div>
+                </div>
+                
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">I don't understand</h3>
+                        <span class="text-primary font-medium">我不明白</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Wǒ bù míngbai</p>
+                    <p class="text-gray-600 mb-3">Woh Boo Ming Bye</p>
+                    <div class="text-sm text-gray-500 italic">When confused by instructions</div>
+                </div>
+                
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">Do you speak English?</h3>
+                        <span class="text-primary font-medium">你会说英语吗？</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Nǐ huì shuō Yīngyǔ ma?</p>
+                    <p class="text-gray-600 mb-3">Nee Hway Shwaw Ying-yoo Mah?</p>
+                    <div class="text-sm text-gray-500 italic">Use with service staff</div>
+                </div>
+                
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">I would like...</h3>
+                        <span class="text-primary font-medium">我想要...</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Wǒ xiǎng yào...</p>
+                    <p class="text-gray-600 mb-3">Woh Shyahng Yow...</p>
+                    <div class="text-sm text-gray-500 italic">For ordering food or drinks</div>
+                </div>
+                
+                <div class="phrase-card bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold">Help!</h3>
+                        <span class="text-primary font-medium">救命！</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">Jiùmìng!</p>
+                    <p class="text-gray-600 mb-3">Jyo Ming!</p>
+                    <div class="text-sm text-gray-500 italic">In case of emergency</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section id="tips" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Travel Tips</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Essential advice to make your trip to China smoother and more enjoyable.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-passport text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Visa & Documentation</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Ensure your visa is valid for all cities you plan to visit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Carry a printed copy of your visa and passport at all times</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Register with your country's embassy upon arrival</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Some attractions require ID - carry a photocopy of your passport</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-wifi text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Internet & Communication</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Consider purchasing a local SIM card for data and calls</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Many hotels offer free VPN services for accessing international sites</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Download offline maps before your trip</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>WeChat is essential for communication with locals</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-money text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Money & Payments</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Carry some cash - while digital payments are widespread, small vendors may not accept them</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Link your international cards to Alipay for easier payments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Notify your bank before traveling to avoid card blocks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>ATMs are widely available in cities but may have withdrawal limits</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-subway text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Transportation</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>China's high-speed rail is efficient and connects major cities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Book train tickets in advance during peak seasons</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Use Didi for convenient taxi services in cities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Subway systems in major cities are affordable and easy to use</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-cutlery text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Dining Etiquette</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Tipping is not expected in most restaurants</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Many restaurants serve food family-style, shared among the table</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Use chopsticks correctly - don't stick them upright in rice</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>It's polite to try a little of every dish served to you</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-lg transition-custom">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-medkit text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Health & Safety</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Drink only bottled water to avoid stomach issues</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Carry any necessary medications in original packaging</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Be aware of your surroundings in crowded areas to prevent pickpocketing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>Save local emergency numbers in your phone</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('py-2', 'shadow');
+                navbar.classList.remove('py-3');
+            } else {
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2', 'shadow');
+            }
+        });
+        
+        // Location details toggle
+        const locationButtons = document.querySelectorAll('.location-details-btn');
+        const locationDetails = document.getElementById('location-details');
+        const locationContents = document.querySelectorAll('.location-content');
+        
+        locationButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const location = button.getAttribute('data-location');
+                
+                // Show the details container
+                locationDetails.classList.remove('hidden');
+                
+                // Hide all location contents
+                locationContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show the selected location content
+                document.getElementById(`${location}-details`).classList.remove('hidden');
+                
+                // Scroll to the details section
+                locationDetails.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Activity tabs
+        const activityTabs = document.querySelectorAll('.activity-tab');
+        const activityContents = document.querySelectorAll('.activity-content');
+        
+        activityTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const location = tab.getAttribute('data-location');
+                
+                // Remove active class from all tabs
+                activityTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-accent', 'text-white');
+                    t.classList.add('bg-gray-200', 'hover:bg-gray-300');
+                });
+                
+                // Add active class to clicked tab
+                tab.classList.add('active', 'bg-accent', 'text-white');
+                tab.classList.remove('bg-gray-200', 'hover:bg-gray-300');
+                
+                // Hide all activity contents
+                activityContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show the selected activity content
+                document.getElementById(`${location}-activities`).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
